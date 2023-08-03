@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{#<h3> {{ movie.movie_name }} </h3>#}
+    <a href="{% url 'home:delete' movie.id %}">Delete</a>
+
+    <h3>{{ movie.movie_name }}</h3>
+    <p>{{ movie.director }}</p>
+    <p>{{ movie.release_date }}</p>
+    <p>{{ movie.Genre }}</p>
+    <p>{{ movie.imdb }}</p>
+
+{% endblock %}

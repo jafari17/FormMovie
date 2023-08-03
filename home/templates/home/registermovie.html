@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    {% load static %}
+    <link href="{% static 'styles.css' %}" rel="stylesheet" />
+
+
+{#    <h1 class="red"> red!!!!!!!!!!</h1>#}
+
+  	<div id="container">
+
+	    <div id="book-list">
+	    	<h2 class="title"> فیلم ها </h2>
+
+			<div class="clear"></div>
+
+            <table>
+                <tbody>
+                </tbody>
+
+            </table>
+	    </div>
+
+         <form id="add-book" action="" method="post" >
+        {% csrf_token %}
+{#        {{  form.as_p }}#}
+
+        <p><label for="id_subject">نام</label>
+            <input id="movie_name" type="text" name="movie_name" maxlength="100" required></p>
+        <p><label for="id_subject">کارگردان</label>
+            <input id="director" type="text" name="director" maxlength="100" required></p>
+        <p><label for="id_subject">سال ساخت</label>
+            <input id="release_date" type="text" name="release_date" maxlength="100" required></p>
+        <p><label for="id_subject">ژانر</label>
+            <input id="Genre" type="text" name="Genre" maxlength="100" required></p>
+        <p><label for="id_subject">نمره imdb </label>
+            <input id="imdb" type="text" name="imdb" maxlength="100" required></p>
+
+        <input class="button"  type="submit" value="ثبت">
+    </form>
+
+    </div>
+
+
+ <script src="{% static 'movie_javascript.js' %}"></script>
+{% endblock %}

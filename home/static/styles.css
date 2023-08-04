@@ -7,7 +7,7 @@ body{
     color: violet;
 }
 
-#book-list h1{
+#movie-list h1{
     float: right;
 }
 
@@ -55,16 +55,16 @@ h1, h2{
     color: #444;
 }
 
-#book-list, #add-book, #tabbed-content{
+#movie-list, #add-book, #tabbed-content{
     margin: 30px;
 }
 
-#book-list h2{
+#movie-list h2{
     float: right;
     margin-right: 15px;
 }
 
-#book-list table {
+#movie-list table {
     width: 100%;
     text-align: right;
     direction: rtl;
@@ -73,25 +73,25 @@ h1, h2{
     padding: 0;
 }
 
-#book-list td, th {
+#movie-list td, th {
     width:10%;
     padding: 20px;
     border-right: 5px solid #ddd;
     margin: 20px 10px;
 }
 
-#book-list ul, #tabbed-content ul{
+#movie-list ul, #tabbed-content ul{
     list-style-type: none;
     padding: 0;
 }
 
-#book-list li{
+#movie-list li{
     padding: 20px;
     border-right: 5px solid #ddd;
     margin: 20px 10px;
 }
 
-#book-list li:hover{
+#movie-list li:hover{
     border-color: #9361bf;
 }
 
@@ -112,12 +112,12 @@ h1, h2{
     background: #333;
 }
 
-#add-book{
+#add-movie{
     width: 400px;
     margin: 0 auto;
 }
 
-#add-book input{
+#add-movie input{
     display: block;
     margin: 5px 0;
     padding: 10px;
@@ -129,7 +129,7 @@ h1, h2{
     float: left;
 }
 
-#add-book label{
+#add-movie label{
 
     padding: 10px 20px;
     font-size: 17px;
@@ -143,7 +143,7 @@ h1, h2{
 }
 
 
-#add-book .button{
+#add-movie .button{
     background: #9361bf;
     cursor: pointer;
     width: 59px;
@@ -163,7 +163,7 @@ h1, h2{
     float: left;
 }
 
-#add-book:after{
+#add-movie:after{
     content: '';
     display: block;
     clear: both;
@@ -178,7 +178,7 @@ h1, h2{
     padding: 0 10px;
 }
 
-#add-book #hide{
+#add-movie #hide{
     width: 30px;
 }
 

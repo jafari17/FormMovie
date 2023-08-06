@@ -12,7 +12,7 @@
   	<div id="container">
 
 	    <div id="book-list">
-	    	<h2 class="title"> فیلم ها </h2>
+	    	<h2 class="title">ویرایش فیلم ها </h2>
 
 			<div class="clear"></div>
 
@@ -28,7 +28,7 @@
 {#        {{  form.as_p }}#}
 
         <p><label for="id_subject">نام</label>
-            <input id="movie_name" type="text" name="movie_name" maxlength="100" required></p>
+            <input id="movie_name" value="test" type="text" name="movie_name" maxlength="100" required></p>
         <p><label for="id_subject">کارگردان</label>
             <input id="director" type="text" name="director" maxlength="100" required></p>
         <p><label for="id_subject">سال ساخت</label>
@@ -38,11 +38,11 @@
         <p><label for="id_subject">نمره imdb </label>
             <input id="imdb" type="text" name="imdb" maxlength="100" required></p>
 
-        <input class="button"  type="submit" value="ثبت">
+        <input class="button" onclick="StartAjax()" type="submit" value="ثبت">
     </form>
 
     </div>
 
 
- <script src="{% static 'movie_javascript.js' %}"></script>
+ <script src="{% static 'edit1.js' %}"></script>
 {% endblock %}

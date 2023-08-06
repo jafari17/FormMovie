@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function load(e){
 
         let tasks = data
         console.log(data)
+            //////////////      create  table th  //////////////////////
 
         const th = `<tr ><td class="name">نام</td><td class="name">کارگردان</td> <td class="name">سال ساخت</td><td class="name">ژانر</td><td class="name">نمره imdb</td></tr>`;
 
@@ -50,9 +51,41 @@ document.addEventListener('DOMContentLoaded', function load(e){
             spanImdb.className = 'name';
             spanImdb.textContent = item.imdb;
 
-            const link = "/delete/" + item.id
-            const spanDelete = `<td><span  class="delete"><a href=` + link+   `>  حذف </a></span></td>`;
+            const spandeletEdit = document.createElement('td');
+            spanImdb.className = 'name';
+            spanImdb.textContent = item.imdb;
 
+            const linkDelete = "/delete/" + item.id
+            const linkEdit = "/edit/" + item.id
+
+
+
+            //////////////      create  span  //////////////////////
+
+            const spanDelete = document.createElement('span');
+            spanDelete.className= 'delete';
+            const aDelete = document.createElement('a');
+            aDelete.href =linkDelete;
+            aDelete.textContent= "حذف"
+
+            const spanEdit = document.createElement('span');
+            spanEdit.className= 'edit';
+            const aEdit = document.createElement('a');
+            aEdit.href =linkEdit;
+            aEdit.textContent= "ویرایش"
+
+
+
+            
+            spanDelete.appendChild(aDelete)
+            spanEdit.appendChild(aEdit)
+
+            spandeletEdit.appendChild(spanDelete)
+            spandeletEdit.appendChild(spanEdit)
+
+            // const spanDelete = `<span class="delete"><a href=` + linkDelete + `حذف </a> </span>` ;
+            // const spanEdit = `<span class="edit">` +    "<a href=" + linkDelete +  "حذف </a>" + "</span>";
+            console.log(spandeletEdit)
             const tr = document.createElement('tr');
 
             tr.appendChild(spanName);
@@ -60,8 +93,9 @@ document.addEventListener('DOMContentLoaded', function load(e){
             tr.appendChild(spanRelease_date);
             tr.appendChild(spanGenre);
             tr.appendChild(spanImdb);
+            tr.appendChild(spandeletEdit);
 
-            tr.innerHTML += spanDelete;
+            // let span = spanDelete + spanEdit;
             table.appendChild(tr);
         }
 

@@ -1,7 +1,9 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
-from .forms import RegisterMovieForm, RegisterTestForm
+from django.views.generic.detail import BaseDetailView
+
+from .forms import RegisterMovieForm, MovieUpdateForm
 from .models import Movie, Test
 from django.contrib import messages
 # Create your views here.
@@ -25,12 +27,6 @@ class HomeView(View):
 class RegisterMovieView(View):
 
     def get(self, request):
-        # form = RegisterMovieForm()
-
-        # all = Movie.objects.all().values()
-        # all = json.dumps(list(blog), cls=DjangoJSONEncoder)
-        # all = Test.objects.values()
-        # print(all)
 
         return render(request, 'home/registermovie.html')
 
@@ -71,6 +67,61 @@ def ajax_data_view(request):
     data = list(all)
 
     # data = {'message': 'This is data retrieved via AJAX GET request.'}
-    print(data)
+    # print(data)
     return JsonResponse(data, safe=False)
+
+class ajax_data_edit_view(View):
+
+    def get(self,request):
+        print(request.GET)
+
+        movie_id = int(request.GET.get("movie_id"))
+
+        print(movie_id)
+
+        all = Movie.objects.all().values()
+        # data = json.dumps(list(all), cls=DjangoJSONEncoder)
+        list_data = list(all)
+        data = {}
+        for item in list_data:
+            if movie_id == item['id']:
+                data = item
+        print(movie_id + 1000000)
+        print(data)
+
+        # data = {'message': 'This is data retrieved via AJAX GET request.'}
+        # print(data)
+        return JsonResponse(data, safe=False)
+
+    def post(self, request):
+        print('hiiiiiii Post Ajax')
+        # print(movie_id + 300000)
+        print(request.POST.get("movie_id"))
+        print(request.POST)
+        movie_id = int(request.POST.get("movie_id"))
+        movie = Movie.objects.get(id=movie_id)
+
+        movie.save()
+        print(movie.movie_name)
+
+        form = MovieUpdateForm(request.POST, instance=movie)
+        if form.is_valid():
+            form.save()
+
+        return redirect('home:movie_register')
+
+
+
+
+class EditView(View):
+
+    def get(self, request,movie_id):
+
+        # Movie.objects.get(id=movie_id).delete()
+        # messages.success(request, 'mevie deleted succ')
+        #
+        print(movie_id)
+
+        return render(request, 'home/edit.html')
+
 

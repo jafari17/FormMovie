@@ -102,6 +102,18 @@ h1, h2{
     border-radius: 4px;
     cursor: pointer;
     color: white;
+    text-decoration: none;
+
+}
+
+.edit{
+    float: left;
+    background: orange;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
 }
 
 .name{
@@ -132,7 +144,7 @@ h1, h2{
 #add-book label{
 
     padding: 10px 20px;
-    font-size: 17px;
+    font-size: 14px;
     display: inline-flex;
     cursor: pointer;
     width: 60px;

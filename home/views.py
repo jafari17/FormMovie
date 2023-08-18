@@ -108,7 +108,7 @@ class ajax_data_edit_view(View):
         if form.is_valid():
             form.save()
 
-        return redirect('home:movie_register')
+        return redirect('#')
 
 
 
@@ -121,7 +121,15 @@ class EditView(View):
         # messages.success(request, 'mevie deleted succ')
         #
         print(movie_id)
+        print(movie_id)
+        print(movie_id)
+        print(movie_id)
+        print(movie_id)
 
         return render(request, 'home/edit.html')
 
 
+    def post(self, request,movie_id):
+
+        print("post movie id")
+        return redirect('home:movie_register')

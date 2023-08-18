@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function load(e){
 
 
 
-            
+
             spanDelete.appendChild(aDelete)
             spanEdit.appendChild(aEdit)
 
